@@ -1,0 +1,134 @@
+<div class="about_section mt-10">
+  <!-- Resume Section -->
+  <h2 class="text_gradient_new" fxLayoutAlign="center center">My Resume</h2>
+  <div class="experience_container" fxLayout="row">
+    <!-- Educational Experience -->
+    <div class="education_exp" fxFlex="50">
+      <div class="education-container">
+        <h1 class="text_white_5lg mb-10" fxLayoutAlign="center center">
+          Education Quality
+        </h1>
+        <div class="degree-card">
+          <div class="timeline-indicator">
+            <div class="timeline-circle"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="card-content">
+            <div class="degree-header">
+              <h2 class="text_white_XXL">B.E ComputerScience</h2>
+              <span class="gpa-badge">8.74/10</span>
+            </div>
+            <p class="text_Italic">
+              St-Joseph's College Of Engineering(OMR, Chennai)
+            </p>
+            <p class="text_white_bold_md">
+              The training provided by universities in order to prepare people
+              to work in various sectors of the economy or areas of culture.
+            </p>
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="degree-card">
+          <div class="timeline-indicator">
+            <div class="timeline-circle"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="card-content">
+            <div class="degree-header">
+              <h2 class="text_white_XXL">AS - Science & Information</h2>
+              <span class="gpa-badge">4.75/5</span>
+            </div>
+            <p class="text_Italic">SuperKing College (2001 - 2005)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Work Experience -->
+    <div class="education_exp" fxFlex="50">
+      <div class="education-container">
+        <h1 class="text_white_5lg mb-10" fxLayoutAlign="center center">
+          Work Experience
+        </h1>
+
+        <div class="degree-card">
+          <div class="timeline-indicator">
+            <div class="timeline-circle"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="card-content">
+            <div class="degree-header">
+              <h2 class="text_white_XXL">Rumango Software</h2>
+              <span class="gpa-badge">Present</span>
+            </div>
+            <p class="text_Italic">Software Developer</p>
+            <p class="text_white_bold_md">
+              The training provided by universities in order to prepare people
+              to work in various sectors of the economy or areas of culture.
+            </p>
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="degree-card">
+          <div class="timeline-indicator">
+            <div class="timeline-circle"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="card-content">
+            <div class="degree-header">
+              <h2 class="text_white_XXL">Rumango Software</h2>
+              <span class="gpa-badge">June 2023 - May 2025</span>
+            </div>
+            <p class="text_Italic">Associate Software Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Sets Section -->
+  <div class="skills-section">
+    <h2 class="text_gradient_new" fxLayoutAlign="center center">My Skills</h2>
+    <div
+      class="skills-container"
+      fxLayout="row wrap"
+      fxLayoutGap="10px"
+      fxLayoutAlign="center center"
+    >
+      <div
+        class="skill-item"
+        *ngFor="let skill of skills"
+        (mouseenter)="hoveredSkill = skill.name"
+        (mouseleave)="hoveredSkill = null"
+      >
+        <div class="skill-progress">
+          <div class="progress-circle" [style.--percentage]="skill.percentage">
+            <img
+              [src]="'assets/images/' + skill.icon + '.svg'"
+              [alt]="skill.name"
+              [class.active]="hoveredSkill === skill.name"
+            />
+          </div>
+        </div>
+        <h3 class="text_white_bold_md" fxLayoutAlign="center center">
+          {{ skill.name }}
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Let's have chat -->
+  <div class="p-20" fxLayout="column">
+    <span class="text_white_md p-5">Want to start a project?</span>
+    <h2 class="animated-heading">
+      <span
+        *ngFor="let letter of getChatText(); let i = index"
+        class="letter"
+        [style.--delay]="i * 0.1"
+      >
+        {{ letter === " " ? "&nbsp;" : letter }}
+      </span>
+    </h2>
+  </div>
+</div>

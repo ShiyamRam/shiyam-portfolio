@@ -1,0 +1,15 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'formatBreadcrumb' })
+export class FormatBreadcrumbPipe implements PipeTransform {
+  transform(route: string): string {
+    const routeMap: { [key: string]: string } = {
+      '/about': 'About',
+      '/services': 'Services',
+      '/portfolio': 'Portfolio',
+      '/blog': 'Blog',
+      '/contact': 'Contact',
+    };
+    return routeMap[route] || '';
+  }
+}

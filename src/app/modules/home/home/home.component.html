@@ -1,0 +1,143 @@
+<div class="body_content" fxLayoutAlign="center center">
+  <div class="content-row" fxLayout="row">
+    <div fxFlex="50" fxLayoutAlign="center center">
+      <div class="text-block">
+        <div class="text_white_10lg">I'm Shiyam</div>
+        <div class="text_gradient">Angular Developer.</div>
+        <div class="text_white_normal_lg">
+          Creative UI developer with expertise in building responsive and
+          user-friendly interfaces using Angular. Strong team player adept at
+          collaborating with diverse teams to deliver high-quality web
+          applications. Committed to continuous learning and passionate about
+          leveraging the latest UI trends to drive project success.
+        </div>
+        <div fxLayout="row" class="mt-10" fxLayoutGap="20">
+          <button
+            mat-stroked-button
+            class="download_btn"
+            (click)="downloadCv()"
+          >
+            <span> {{ buttonText }}</span>
+            <mat-icon>{{
+              buttonText === "Completed!" ? "check" : "file_download"
+            }}</mat-icon>
+          </button>
+          <div
+            class="social-icons"
+            fxLayout="row"
+            fxLayoutGap="10"
+            fxLayoutAlign="center center"
+          >
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <img src="./assets/images/linkedin.svg" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://github.com/your-username"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img src="./assets/images/github.svg" alt="GitHub" />
+            </a>
+            <a
+              href="https://www.naukri.com/mnjuser/profile"
+              target="_blank"
+              aria-label="Naukri"
+            >
+              <img src="assets/images/naukiri.svg" alt="Naukri" />
+            </a>
+          </div>
+        </div>
+        <!-- Stats Section -->
+        <div fxLayoutAlign="space-between center" class="mt-10">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10">
+            <div class="text_white_10lg">2+</div>
+            <div class="text_white_normal_lg">Years of Experience</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10">
+            <div class="text_white_10lg">10+</div>
+            <div class="text_white_normal_lg">Projects Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="50" fxLayoutAlign="center center">
+      <div class="avatar-wrapper">
+        <img src="/assets/images/portfolio.png" alt="portfolio" />
+      </div>
+    </div>
+  </div>
+  <!-- Background HI text -->
+  <svg viewBox="0 0 1320 300" preserveAspectRatio="xMidYMid meet">
+    <text x="50%" y="50%" text-anchor="middle" class="animate-stroke">HI</text>
+  </svg>
+</div>
+
+<!-- Tech Stacks Section -->
+<div class="container">
+  <h2 class="text_white_XXL mt-20" fxLayoutAlign="center center">
+    DOMAIN EXPERTISE
+  </h2>
+
+  <div class="domain-expertise-container">
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      class="content-wrapper"
+    >
+      <!-- Left Side - Orbit (30% width) -->
+      <div fxFlex="30" class="orbit-container">
+        <div class="tech-orbit-wrapper">
+          <div class="tech-orbit-container">
+            <svg class="orbit-circle" viewBox="0 0 400 400">
+              <path
+                *ngFor="let segment of circleSegments"
+                [attr.d]="segment"
+                class="orbit-segment"
+                stroke="#BDC3C7"
+                stroke-width="5"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="center-text">
+              <div class="title">TECH STACK</div>
+              <div class="current-tech">
+                {{ hoveredTech || "Hover an icon" }}
+              </div>
+            </div>
+            <div
+              *ngFor="let tech of techStack; let i = index"
+              class="tech-icon"
+              [style.--i]="i"
+              [style.--total]="techStack.length"
+              (mouseenter)="hoveredTech = tech.name"
+              (mouseleave)="hoveredTech = ''"
+            >
+              <img [src]="'assets/images/' + tech.icon" [alt]="tech.name" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Cards (70% width) -->
+      <div fxFlex="70" class="cards-container">
+        <div class="skills-scroll-wrapper">
+          <div #skillContainer class="skills-scroll">
+            <div *ngFor="let skill of skills" class="skill-card">
+              <div class="skill-icon">
+                <img [src]="'assets/images/' + skill.icon" [alt]="skill.name" />
+              </div>
+              <h3 class="skill-title">{{ skill.name }}</h3>
+              <p class="skill-description">{{ skill.description }}</p>
+              <div class="read-more">Read More</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
