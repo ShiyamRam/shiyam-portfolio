@@ -1,0 +1,124 @@
+:root {
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-gt-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 23px;
+  --font-size-xxl: 28px;
+  --font-size-3xl: 30px;
+  --font-size-5xl: 36px;
+  --font-size-10xl: 48px;
+  --font-size-128xl: 128px;
+}
+
+$font-family-theme: "Sora", sans-serif !default;
+
+.text_white_md {
+  text-align: left;
+  font-size: var(--font-size-md);
+  font-family: $font-family-theme;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.text_white_10lg {
+  text-align: left;
+  font-size: var(--font-size-10xl);
+  font-family: $font-family-theme;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.text_white_5lg {
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  font-family: $font-family-theme;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.text_white_XXL {
+  text-align: left;
+  font-size: var(--font-size-xxl);
+  font-family: $font-family-theme;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.text_gradient {
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  font-family: $font-family-theme;
+  font-weight: 600;
+  letter-spacing: 0px;
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text_gradient {
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  font-family: $font-family-theme;
+  font-weight: 600;
+  letter-spacing: 0px;
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text_gradient_new {
+  font-family: $font-family-theme;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+  background: -webkit-linear-gradient(left, #8503ff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-flex;
+  gap: 15px;
+  margin-bottom: 0;
+}
+.text_gradient_128lg {
+  font-family: $font-family-theme;
+  font-size: var(--font-size-128xl);
+  font-weight: 600;
+  background: -webkit-linear-gradient(left, #8503ff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-flex;
+  gap: 15px;
+  margin-bottom: 0;
+}
+
+.text_white_normal_lg {
+  text-align: left;
+  font-size: var(--font-size-lg);
+  font-family: $font-family-theme;
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.text_white_bold_md {
+  text-align: left;
+  font-size: var(--font-size-md);
+  font-family: $font-family-theme;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.text_Italic {
+  color: #aaa;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
