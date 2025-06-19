@@ -1,0 +1,14 @@
+<div class="about_section black_bg mt-10">
+  <h2 class="text_gradient_new" fxLayoutAlign="center center">Services</h2>
+
+  <div class="design-container pt-10" fxLayout="row wrap" fxLayoutGap="10">
+    <div class="design-item" *ngFor="let item of designItems" fxFlex="48">
+      <div class="design-header">
+        <img src="assets/images/code.svg" class="pb-3" alt="code" />
+        <h2 class="text_white_mdgt_bold">{{ item.title }}</h2>
+      </div>
+      <div class="divider"></div>
+      <p class="text_white_sm_normal pt-3">{{ item.content }}</p>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,16 @@
-<div class="header_container">
+<div class="header_container black_bg">
   <!-- Header section nav -->
-  <div fxLayout="row">
+  <div fxLayout="row" class="custom_header gradient_bg">
     <div class="logo" fxFlex="50" fxLayout="row" fxLayoutAlign="start center">
       <img src="assets/images/logo.png" class="w-[100px]" alt="logo" />
-      <h2 class="text-white">{{ "shiyamram18@gmail.com" }}</h2>
+      <h2
+        class="text-white cursor-pointer"
+        matTooltip="Copied!"
+        #tooltip="matTooltip"
+        (click)="copyEmail(tooltip)"
+      >
+        {{ "shiyamram18@gmail.com" }}
+      </h2>
     </div>
     <div class="flex items-center justify-between" fxLayoutGap="20">
       <nav class="flex space-x-8 text-white font-semibold text-lg">
@@ -27,7 +34,7 @@
           routerLinkActive="border-b-2 border-purple-500"
           class="hover:text-purple-400"
         >
-          Services
+          Service
         </a>
         <a
           routerLink="/portfolio"
@@ -61,8 +68,9 @@
     class="laptop-overlay"
   >
     <!-- Breadcrumb Navigation -->
+
     <div class="breadcrumb" *ngIf="currentRoute !== '/home'">
-      <span class="text_white_10lg">
+      <span class="text_white_mdgt_bold">
         Home → {{ currentRoute | formatBreadcrumb }}
       </span>
     </div>
@@ -70,15 +78,29 @@
     <img src="assets/images/laptopresize.png" alt="Laptop" />
   </div>
 
+  <div
+    [ngClass]="{
+      projected_content: currentRoute == '/home' || currentRoute == '/'
+    }"
+  >
+    <div class="loader-wrapper" *ngIf="isLoading" [@smoothDissolve]>
+      <app-loader></app-loader>
+    </div>
+    <div *ngIf="showOutlet" [@smoothDissolve]>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
   <!-- Footer Section -->
-  <router-outlet></router-outlet>
-  <footer class="footer">
+
+  <footer class="footer" *ngIf="!isLoading" [@smoothDissolve]>
     <div class="footer-content">
       <img src="assets/images/logo.png" class="w-[80px]" alt="logo" />
       <nav class="footer-nav">
         <a href="#">About</a>
-        <a href="#">Services</a>
+        <a href="#">Service</a>
         <a href="#">Portfolios</a>
+        <a href="#">Blog</a>
         <a href="#">Contact</a>
       </nav>
 

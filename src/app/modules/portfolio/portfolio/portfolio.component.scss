@@ -1,0 +1,43 @@
+.custom-toggle-group {
+  background-color: #0d0b10; // background for the toggle group
+  border-radius: 9999px;
+  padding: 10px;
+  display: inline-flex;
+
+  .mat-button-toggle {
+    flex: 1;
+    border: none !important;
+    border-radius: 9999px !important;
+    color: white;
+    font-weight: 600;
+    min-width: 100px;
+    padding: 15px 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mat-button-toggle-checked {
+    background: linear-gradient(280deg, #7f41db, #551ea9) !important;
+    color: white;
+    box-shadow: 0 0 12px rgba(127, 65, 219, 0.6); // soft outer glow
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mat-button-toggle:not(.mat-button-toggle-checked) {
+    background-color: #0b0b0e !important;
+    color: #ffffffcc;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

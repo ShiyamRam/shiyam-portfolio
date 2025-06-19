@@ -1,0 +1,29 @@
+.contact_card_container {
+  max-width: 35% !important;
+  margin: 0 auto;
+  color: white;
+  .contact_card {
+    background: #140c1c;
+    border-radius: 12px;
+    margin-bottom: 5rem;
+    transition: all 0.3s ease;
+    padding: 2rem;
+    border: 1px solid #8750f7;
+  }
+
+  .send_btn {
+    background-image: linear-gradient(to right, #a970ff, #6b38f1);
+    box-shadow: none;
+    width: 35%;
+  }
+}
+
+.icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6e00ff, #b84aff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

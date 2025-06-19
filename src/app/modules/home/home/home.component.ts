@@ -21,6 +21,12 @@ export class HomeComponent {
         'Modern web markup and styling with responsive design principles and CSS animations.',
     },
     {
+      name: 'Bootstrap',
+      icon: 'bootstarp.svg',
+      description:
+        'Implemented responsive image captions and overlays using Bootstrap’s.Creating websites that adapt to different screen sizes and devices. ',
+    },
+    {
       name: 'JavaScript/TypeScript',
       icon: 'javascript.svg',
       description:
@@ -57,19 +63,21 @@ export class HomeComponent {
         'Distributed version control system for tracking changes in source code.',
     },
     {
-      name: 'Responsive Design',
-      icon: 'angular.svg',
+      name: 'Wordpress',
+      icon: 'wordpress.svg',
       description:
-        'Creating websites that adapt to different screen sizes and devices.',
+        'Developed custom WordPress shortcodes to render styled captions using Bootstrap classes for images and carousels.',
     },
   ];
 
   techStack = [
     { name: 'JavaScript', icon: 'javascript.svg' },
     { name: 'Angular', icon: 'angular.svg' },
+    { name: 'Worpress', icon: 'wordpress.svg' },
     { name: 'MySql', icon: 'sql.svg' },
     { name: 'HTML5', icon: 'html.svg' },
     { name: 'CSS3', icon: 'css.svg' },
+    { name: 'Bootstrap', icon: 'bootstarp.svg' },
     { name: 'Node.js', icon: 'node.svg' },
     { name: 'Github', icon: 'github.svg' },
   ];
