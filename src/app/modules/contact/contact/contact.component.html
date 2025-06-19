@@ -1,0 +1,94 @@
+<div [ngClass]="{ black_bg: showBackground, contact_section: true }">
+  <h2 class="text_gradient_new" fxLayoutAlign="center center">Contact</h2>
+  <div fxLayout="row">
+    <div
+      fxFlex="50"
+      class="contact_card_container"
+      fxLayoutAlign="center center"
+    >
+      <div class="contact_card" fxLayout="column">
+        <h2 class="text_gradient_xxl">Lets work together</h2>
+        <span class="text_white_md"
+          >Angular is my playground, TypeScript is my language. I craft fast,
+          responsive, and maintainable web apps with precision and love what I
+          do. Let’s team up and build something awesome.</span
+        >
+        <div fxLayout="row wrap" fxLayoutGap="10" fxFlex="100" class="mt-8">
+          <div fxFlex="46.5">
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="46.5">
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+          <div fxFlex="46.5">
+            <mat-form-field appearance="outline">
+              <mat-label>Email Address</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+          <div fxFlex="46.5">
+            <mat-form-field appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+          <div fxFlex="100">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Message</mat-label>
+              <textarea matInput rows="6" name="Message" required></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button color="primary" class="send_btn mt-20">
+          Send Message!
+        </button>
+      </div>
+    </div>
+
+    <div fxFlex="50">
+      <img src="assets/images/contactPortfolio.png" alt="conatctportfolio" />
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40">
+    <!-- Phone -->
+    <div fxLayoutAlign="center center" fxLayoutGap="12">
+      <div class="icon-wrapper">
+        <img src="assets/images/phone.svg" alt="phone" />
+      </div>
+      <div class="contact-info" fxLayout="column">
+        <span class="text_white_md">Phone</span>
+        <span class="text_white_normal_lg">9080220329</span>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div fxLayoutAlign="center center" fxLayoutGap="12">
+      <div class="icon-wrapper">
+        <img src="assets/images/email.svg" alt="email" />
+      </div>
+      <div class="contact-info" fxLayout="column">
+        <span class="text_white_md">Email</span>
+        <span class="text_white_normal_lg">{{ "shiyamram18@gmail.com" }}</span>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div fxLayoutAlign="center center" fxLayoutGap="12">
+      <div class="icon-wrapper">
+        <img src="assets/images/address.svg" alt="address" />
+      </div>
+      <div class="contact-info" fxLayout="column">
+        <span class="text_white_md">Address</span>
+        <span class="text_white_normal_lg">Adambakkam, Chennai</span>
+      </div>
+    </div>
+  </div>
+</div>

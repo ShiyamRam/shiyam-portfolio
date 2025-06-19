@@ -11,13 +11,23 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { AboutUsComponent } from './modules/about-us/about-us/about-us.component';
 import { PortfolioComponent } from './modules/portfolio/portfolio/portfolio.component';
 import { PipesModule } from './pipes/pipe.module';
+import { ServiceComponent } from './modules/service/service/service.component';
+import { ContactComponent } from './modules/contact/contact/contact.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { BlogComponent } from './modules/blog/blog/blog.component';
+import { ViewPopupComponent } from './shared/viewPopup/view-popup/view-popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutUsComponent,
+    ServiceComponent,
     PortfolioComponent,
+    ContactComponent,
+    BlogComponent,
+    LoaderComponent,
+    ViewPopupComponent,
   ],
   imports: [
     BrowserAnimationsModule,

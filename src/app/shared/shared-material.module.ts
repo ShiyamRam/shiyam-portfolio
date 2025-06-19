@@ -7,6 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   exports: [
     MatFormFieldModule,
@@ -17,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
     MatMenuModule,
     MatButtonModule,
     MatInputModule,
+    MatTooltipModule,
+    MatButtonToggleModule,
+    MatDialogModule,
   ],
 })
 export class SharedMaterialModule {}

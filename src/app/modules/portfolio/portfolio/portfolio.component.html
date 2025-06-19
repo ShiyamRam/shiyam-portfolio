@@ -1,0 +1,123 @@
+<!-- Portfolio section starts -->
+<div class="portfolio_container black_bg mt-10">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2 class="text_gradient_new">Projects</h2>
+    <div fxLayoutAlign="center center">
+      <span class="text_white_md_center mt-3 max-w-[46%]"
+        >A thoughtfully crafted solution where functionality meets intuitive
+        design, built on clean architecture and modern frameworks to solve
+        real-world problems with seamless user experience.</span
+      >
+    </div>
+  </div>
+
+  <!-- Tabs section -->
+  <div class="tabs_section mt-10" fxLayoutAlign="center center">
+    <mat-button-toggle-group
+      name="projectTabs"
+      aria-label="Project Tabs"
+      appearance="standard"
+      class="custom-toggle-group text-center"
+      [(ngModel)]="selectedTab"
+    >
+      <mat-button-toggle value="personal">Personal</mat-button-toggle>
+      <mat-button-toggle value="professional">Professional</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <!-- Project Section -->
+  <ng-container *ngIf="selectedTab == 'personal'; else Professional">
+    <div
+      fxLayout="row wrap"
+      fxLayoutGap="24px"
+      class="justify-center w-full px-4"
+    >
+      <div
+        *ngFor="let project of personalPorjectArr"
+        class="group relative w-full max-w-2xl mx-auto mt-5 p-6 rounded-3xl shadow-xl border border-white/10 mb-8 bg-white/5 backdrop-blur-md animate-fade-in-up overflow-hidden"
+      >
+        <div
+          class="absolute top-0 left-[-75%] w-[50%] h-full bg-white/20 transform skew-x-[-20deg] opacity-30 group-hover:animate-gloss-swipe pointer-events-none z-10"
+        ></div>
+
+        <div
+          class="relative overflow-x-auto flex flex-nowrap gap-4 scroll-smooth scrollbar-hide z-20"
+          (scroll)="onScroll($event, project)"
+        >
+          <div
+            *ngFor="let img of project.images; let i = index"
+            class="relative shrink-0 w-[450px] h-[250px] rounded-xl overflow-hidden transition-all duration-300"
+            [ngClass]="{
+              'opacity-100 blur-none scale-100': project.activeIndex === i,
+              'opacity-50 blur-sm scale-95': project.activeIndex !== i
+            }"
+          >
+            <img
+              [src]="img"
+              class="w-full h-full object-cover"
+              alt="project image"
+            />
+          </div>
+        </div>
+
+        <div class="mt-6 relative z-20">
+          <h3 class="text_white_bold_lg">{{ project.title }}</h3>
+          <p class="text_Italic">{{ project.description }}</p>
+          <a
+            [routerLink]="project.link"
+            class="gradient_btn inline-block mt-4 px-6 py-2 font-medium rounded-lg transition hover:opacity-90"
+          >
+            View Project →
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #Professional>
+    <div
+      fxLayout="row wrap"
+      fxLayoutGap="24px"
+      class="justify-center w-full px-4"
+    >
+      <div
+        *ngFor="let project of professionalPorjectArr"
+        class="group relative w-full max-w-2xl mx-auto mt-5 p-6 rounded-3xl shadow-xl border border-white/10 mb-8 bg-white/5 backdrop-blur-md animate-fade-in-up overflow-hidden"
+      >
+        <div
+          class="absolute top-0 left-[-75%] w-[50%] h-full bg-white/20 transform skew-x-[-20deg] opacity-30 group-hover:animate-gloss-swipe pointer-events-none z-10"
+        ></div>
+
+        <div
+          class="relative overflow-x-auto flex flex-nowrap gap-4 scroll-smooth scrollbar-hide z-20"
+          (scroll)="onScroll($event, project)"
+        >
+          <div
+            *ngFor="let img of project.images; let i = index"
+            class="relative shrink-0 w-[450px] h-[250px] rounded-xl overflow-hidden transition-all duration-300"
+            [ngClass]="{
+              'opacity-100 blur-none scale-100': project.activeIndex === i,
+              'opacity-50 blur-sm scale-95': project.activeIndex !== i
+            }"
+          >
+            <img
+              [src]="img"
+              class="w-full h-full object-cover"
+              alt="project image"
+            />
+          </div>
+        </div>
+
+        <div class="mt-6 relative z-20">
+          <h3 class="text_white_bold_lg">{{ project.title }}</h3>
+          <p class="text_Italic">{{ project.description }}</p>
+          <a
+            [routerLink]="project.link"
+            class="gradient_btn inline-block mt-4 px-6 py-2 font-medium rounded-lg transition hover:opacity-90"
+          >
+            View Project →
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

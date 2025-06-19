@@ -10,11 +10,5 @@ if (environment.production) {
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .then(() => {
-    const loader = document.getElementById('global-loader');
-    if (loader) {
-      loader.classList.add('fade-out');
-      setTimeout(() => loader.remove(), 500);
-    }
-  })
+  .then(() => {})
   .catch((err) => console.error(err));

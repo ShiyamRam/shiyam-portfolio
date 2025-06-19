@@ -1,0 +1,23 @@
+/* design-section.component.css */
+.design-container {
+  max-width: 75%;
+  margin: 0 auto;
+  color: white;
+  .design-item {
+    background: #140c1c;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    padding: 2rem;
+    border: 1px solid #8750f7;
+    &:hover {
+      background: linear-gradient(260deg, #2a1454 0%, #8750f7 100%);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(135, 80, 247, 0.3);
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+          hue-rotate(93deg) brightness(103%) contrast(103%);
+      }
+    }
+  }
+}
