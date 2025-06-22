@@ -57,6 +57,7 @@ export class AppComponent {
       if (event instanceof NavigationStart) {
         this.isLoading = true;
         this.showOutlet = false;
+
         this.cdr.detectChanges();
       }
       if (
@@ -67,6 +68,7 @@ export class AppComponent {
         setTimeout(() => {
           this.isLoading = false;
           this.showOutlet = true;
+          window.scroll({ top: 0, behavior: 'smooth' });
           this.cdr.detectChanges();
         }, 800);
       }
