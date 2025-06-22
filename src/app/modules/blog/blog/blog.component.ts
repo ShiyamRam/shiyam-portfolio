@@ -17,11 +17,6 @@ export class BlogComponent {
       certificateImageUrl: 'assets/images/certificates/css-beginners.jpg',
     },
     {
-      name: 'Bootstarp & Tailwind',
-      platform: 'Udemy',
-      certificateImageUrl: 'assets/images/certificates/bootstrap.jpg',
-    },
-    {
       name: 'Javascript for Beginers',
       platform: 'Udemy',
       certificateImageUrl: 'assets/images/certificates/javascriptUltimate.jpg',
@@ -31,6 +26,12 @@ export class BlogComponent {
       platform: 'Coursera',
       certificateImageUrl: 'assets/images/certificates/courseraJavascript.pdf',
     },
+    {
+      name: 'Bootstarp & Tailwind',
+      platform: 'Udemy',
+      certificateImageUrl: 'assets/images/certificates/bootstrap.jpg',
+    },
+
     {
       name: 'Full-stack Developer',
       platform: 'Coursera',

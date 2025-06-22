@@ -96,4 +96,15 @@ export class AppComponent {
       setTimeout(() => tooltip.hide(), 2000);
     });
   }
+
+  // // hireMe
+  hireMe() {
+    const email = 'shiyamram18@gmail.com';
+    const subject = 'Hiring Inquiry';
+    const body = 'Hi, I am interested in hiring you.';
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank');
+  }
 }
