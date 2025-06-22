@@ -6,7 +6,9 @@
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100%;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -68,4 +70,20 @@ body,
   position: absolute;
   width: 100%;
   transform: translate(0%, -50%);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Scrollbar thumb (the moving part) */
+::-webkit-scrollbar-thumb {
+  background-color: #a076f9;
+  border-radius: 10px;
+}
+
+/* Optional: scrollbar track background */
+::-webkit-scrollbar-track {
+  background-color: #1d0d34;
 }

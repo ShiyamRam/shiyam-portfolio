@@ -1,13 +1,22 @@
 <div class="about_section black_bg mt-10">
   <!-- Resume Section -->
-  <h2 class="text_gradient_new" fxLayoutAlign="center center">My Resume</h2>
+  <div class="w-full flex justify-center">
+    <h2 class="text_gradient_new text-center">My Resume</h2>
+  </div>
 
   <!-- TimelineComponent HTML -->
-  <div class="modern-timeline" fxLayout="row" fxLayoutGap="32px">
+  <div
+    class="modern-timeline"
+    fxLayout="column"
+    fxLayout.lt-md="column"
+    fxLayout.gt-sm="row"
+    fxLayoutGap="32px"
+  >
     <!-- Education Section -->
-    <div class="timeline-section with-highlight" fxFlex="50">
+    <div class="timeline-section with-highlight" fxFlex="100" fxFlex.gt-sm="50">
       <h2 class="section-heading">
-        <span class="icon">🎓</span> <span>Education</span>
+        <span class="icon">🎓</span>
+        <span class="text_gradient_md">Education</span>
       </h2>
 
       <div class="entry" *ngFor="let edu of educationList">
@@ -25,9 +34,10 @@
     </div>
 
     <!-- Experience Section -->
-    <div class="timeline-section with-highlight" fxFlex="50">
+    <div class="timeline-section with-highlight" fxFlex="100" fxFlex.gt-sm="50">
       <h2 class="section-heading">
-        <span class="icon">💼</span> <span>Experience</span>
+        <span class="icon">💼</span>
+        <span class="text_gradient_md">Experience</span>
       </h2>
 
       <div class="entry" *ngFor="let exp of experienceList">
@@ -46,16 +56,18 @@
   </div>
 
   <!-- Skill Sets Section -->
-  <div class="skills-section gradient_bg">
-    <h2 class="text_gradient_new" fxLayoutAlign="center center">My Skills</h2>
+  <div class="skills-section gradient_bg mt-10">
+    <div class="w-full flex justify-center">
+      <h2 class="text_gradient_new text-center">My Skills</h2>
+    </div>
     <div
       class="skills-container"
       fxLayout="row wrap"
-      fxLayoutGap="10px"
       fxLayoutAlign="center center"
+      fxLayoutGap="10px"
     >
       <div
-        class="skill-item"
+        class="skill-item flex flex-col items-center justify-center text-center"
         *ngFor="let skill of skills"
         (mouseenter)="hoveredSkill = skill.name"
         (mouseleave)="hoveredSkill = null"
@@ -69,7 +81,7 @@
             />
           </div>
         </div>
-        <h3 class="text_white_bold_md" fxLayoutAlign="center center">
+        <h3 class="text_white_bold_md text-center">
           {{ skill.name }}
         </h3>
       </div>
@@ -77,15 +89,15 @@
   </div>
 
   <!-- Let's have chat -->
-  <div class="p-20 black_bg" fxLayout="column">
+  <div class="p-5 sm:p-10 md:p-20 black_bg" fxLayout="column">
     <span class="text_white_md p-5">Want to start a project?</span>
-    <h2 class="animated-heading">
+    <h2 class="animated-heading text-center flex flex-wrap justify-center">
       <span
         *ngFor="let letter of getChatText(); let i = index"
         class="letter"
         [style.--delay]="i * 0.1"
+        [innerHTML]="letter === ' ' ? '&nbsp;' : letter"
       >
-        {{ letter === " " ? "&nbsp;" : letter }}
       </span>
     </h2>
   </div>

@@ -23,7 +23,7 @@ export class PortfolioComponent {
       activeIndex: 0,
     },
     {
-      title: 'Hostar Clone',
+      title: 'Hotstar Clone',
       description:
         'Bubble design & development featuring a two-way marketplace for models and model employers/brands.',
       images: [

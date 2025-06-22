@@ -50,6 +50,7 @@ export class AppComponent {
   currentRoute: string = '';
   isLoading = false;
   showOutlet = false;
+  mobileMenuOpen = false;
 
   constructor(private router: Router, private cdr: ChangeDetectorRef) {
     this.router.events.subscribe((event) => {
@@ -79,6 +80,10 @@ export class AppComponent {
   // Footer scroll top
   scrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
   // CopyEmail

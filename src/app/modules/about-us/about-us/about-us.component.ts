@@ -26,9 +26,10 @@ export class AboutUsComponent {
         'Gained strong foundations in software engineering and web development.',
     },
     {
-      title: 'AS – Science & Information',
-      institution: 'SuperKing College (2001–2005)',
-      gpa: '4.75/5 GPA',
+      title: 'SSLC (10TH)',
+      institution:
+        'New Prince Matriculation Higher Secondary School (Adambakkam, Chennai)',
+      gpa: '90.5%',
       description: '',
     },
   ];
