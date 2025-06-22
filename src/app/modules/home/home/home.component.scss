@@ -138,8 +138,7 @@
   .avatar-wrapper {
     perspective: 1000px;
     display: inline-block;
-    // max-width: 70%;
-    max-width: 100%; /* or 90vw */
+    max-width: 100%;
     overflow: hidden;
     transform-style: preserve-3d;
     cursor: pointer;
