@@ -1,8 +1,10 @@
 <div [ngClass]="{ black_bg: showBackground, contact_section: true }">
   <h2 class="text_gradient_new" fxLayoutAlign="center center">Contact</h2>
-  <div fxLayout="row">
+
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center stretch">
     <div
       fxFlex="50"
+      fxFlex.lt-md="100"
       class="contact_card_container"
       fxLayoutAlign="center center"
     >
@@ -13,27 +15,32 @@
           responsive, and maintainable web apps with precision and love what I
           do. Let’s team up and build something awesome.</span
         >
-        <div fxLayout="row wrap" fxLayoutGap="10" fxFlex="100" class="mt-8">
-          <div fxFlex="46.5">
+        <div
+          fxLayout="row wrap"
+          fxLayoutGap="10px grid"
+          fxFlex="100"
+          class="mt-8"
+        >
+          <div fxFlex="46.5" fxFlex.lt-sm="100">
             <mat-form-field appearance="outline">
               <mat-label>First Name</mat-label>
               <input matInput />
             </mat-form-field>
           </div>
 
-          <div fxFlex="46.5">
+          <div fxFlex="46.5" fxFlex.lt-sm="100">
             <mat-form-field appearance="outline">
               <mat-label>Last Name</mat-label>
               <input matInput />
             </mat-form-field>
           </div>
-          <div fxFlex="46.5">
+          <div fxFlex="46.5" fxFlex.lt-sm="100">
             <mat-form-field appearance="outline">
               <mat-label>Email Address</mat-label>
               <input matInput />
             </mat-form-field>
           </div>
-          <div fxFlex="46.5">
+          <div fxFlex="46.5" fxFlex.lt-sm="100">
             <mat-form-field appearance="outline">
               <mat-label>Phone</mat-label>
               <input matInput />
@@ -46,19 +53,31 @@
             </mat-form-field>
           </div>
         </div>
-        <button mat-raised-button color="primary" class="send_btn mt-20">
-          Send Message!
-        </button>
+        <div fxLayout="row" fxLayoutAlign="center center" class="w-full mt-20">
+          <button mat-raised-button color="primary" class="send_btn">
+            Send Message!
+          </button>
+        </div>
       </div>
     </div>
 
-    <div fxFlex="50">
-      <img src="assets/images/contactPortfolio.png" alt="conatctportfolio" />
+    <div fxFlex="50" fxFlex.lt-md="100" fxLayoutAlign="center center">
+      <img
+        src="assets/images/contactPortfolio.png"
+        alt="contactportfolio"
+        style="max-width: 100%; height: auto"
+      />
     </div>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40">
-    <!-- Phone -->
+  <div
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="40px"
+    fxLayoutGap.lt-md="20px"
+    class="mt-10"
+  >
     <div fxLayoutAlign="center center" fxLayoutGap="12">
       <div class="icon-wrapper">
         <img src="assets/images/phone.svg" alt="phone" />
@@ -69,7 +88,6 @@
       </div>
     </div>
 
-    <!-- Email -->
     <div fxLayoutAlign="center center" fxLayoutGap="12">
       <div class="icon-wrapper">
         <img src="assets/images/email.svg" alt="email" />
@@ -80,7 +98,6 @@
       </div>
     </div>
 
-    <!-- Address -->
     <div fxLayoutAlign="center center" fxLayoutGap="12">
       <div class="icon-wrapper">
         <img src="assets/images/address.svg" alt="address" />

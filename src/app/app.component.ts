@@ -50,12 +50,14 @@ export class AppComponent {
   currentRoute: string = '';
   isLoading = false;
   showOutlet = false;
+  mobileMenuOpen = false;
 
   constructor(private router: Router, private cdr: ChangeDetectorRef) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.isLoading = true;
         this.showOutlet = false;
+
         this.cdr.detectChanges();
       }
       if (
@@ -66,6 +68,7 @@ export class AppComponent {
         setTimeout(() => {
           this.isLoading = false;
           this.showOutlet = true;
+          window.scroll({ top: 0, behavior: 'smooth' });
           this.cdr.detectChanges();
         }, 800);
       }
@@ -79,6 +82,10 @@ export class AppComponent {
   // Footer scroll top
   scrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
   // CopyEmail

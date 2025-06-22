@@ -1,10 +1,16 @@
+<!-- Header section nav -->
 <div class="header_container black_bg">
-  <!-- Header section nav -->
-  <div fxLayout="row" class="custom_header gradient_bg">
-    <div class="logo" fxFlex="50" fxLayout="row" fxLayoutAlign="start center">
-      <img src="assets/images/logo.png" class="w-[100px]" alt="logo" />
+  <div
+    class="custom_header gradient_bg px-4 py-3 w-full flex items-center justify-between"
+  >
+    <div class="flex items-center gap-2 w-full sm:w-auto overflow-hidden">
+      <img
+        src="assets/images/logo.png"
+        class="w-[50px] sm:w-[70px]"
+        alt="logo"
+      />
       <h2
-        class="text-white cursor-pointer"
+        class="text-white cursor-pointer text-sm sm:text-base"
         matTooltip="Copied!"
         #tooltip="matTooltip"
         (click)="copyEmail(tooltip)"
@@ -12,57 +18,106 @@
         {{ "shiyamram18@gmail.com" }}
       </h2>
     </div>
-    <div class="flex items-center justify-between" fxLayoutGap="20">
+
+    <div class="hidden lg:flex items-center justify-end gap-6 flex-1">
       <nav class="flex space-x-8 text-white font-semibold text-lg">
         <a
           routerLink="/home"
           routerLinkActive="border-b-2 border-purple-500"
-          class="flex items-center hover:text-purple-400"
+          class="hover:text-purple-400"
+          >Home</a
         >
-          Home
-        </a>
-
         <a
           routerLink="/about"
           routerLinkActive="border-b-2 border-purple-500"
           class="hover:text-purple-400"
+          >About</a
         >
-          About
-        </a>
         <a
           routerLink="/services"
           routerLinkActive="border-b-2 border-purple-500"
           class="hover:text-purple-400"
+          >Service</a
         >
-          Service
-        </a>
         <a
           routerLink="/portfolio"
           routerLinkActive="border-b-2 border-purple-500"
           class="hover:text-purple-400"
+          >Portfolios</a
         >
-          Portfolios
-        </a>
         <a
           routerLink="/blog"
           routerLinkActive="border-b-2 border-purple-500"
-          class="flex items-center hover:text-purple-400"
+          class="hover:text-purple-400"
+          >Certificate</a
         >
-          Blog
-        </a>
         <a
           routerLink="/contact"
           routerLinkActive="border-b-2 border-purple-500"
           class="hover:text-purple-400"
+          >Contact</a
         >
-          Contact
-        </a>
       </nav>
       <button mat-raised-button color="primary" class="hire-me-btn">
         Hire Me!
       </button>
     </div>
+
+    <div class="lg:hidden">
+      <mat-icon
+        class="text-white text-3xl cursor-pointer"
+        (click)="toggleMobileMenu()"
+        >reorder</mat-icon
+      >
+    </div>
   </div>
+
+  <div
+    *ngIf="mobileMenuOpen"
+    class="fixed top-[70px] left-0 right-0 z-50 bg-black text-white text-base font-semibold px-6 py-4 space-y-4 lg:hidden"
+  >
+    <a
+      routerLink="/home"
+      class="block hover:text-purple-400"
+      (click)="mobileMenuOpen = false"
+      >Home</a
+    >
+    <a
+      routerLink="/about"
+      class="block hover:text-purple-400"
+      (click)="mobileMenuOpen = false"
+      >About</a
+    >
+    <a
+      routerLink="/services"
+      class="block hover:text-purple-400"
+      (click)="mobileMenuOpen = false"
+      >Service</a
+    >
+    <a
+      routerLink="/portfolio"
+      class="block hover:text-purple-400"
+      (click)="mobileMenuOpen = false"
+      >Portfolios</a
+    >
+    <a
+      routerLink="/blog"
+      class="block hover:text-purple-400"
+      (click)="mobileMenuOpen = false"
+      >Certificate</a
+    >
+    <a
+      routerLink="/contact"
+      class="block hover:text-purple-400"
+      (click)="mobileMenuOpen = false"
+      >Contact</a
+    >
+
+    <button mat-raised-button color="primary" class="w-full hire-me-btn mt-4">
+      Hire Me!
+    </button>
+  </div>
+
   <div
     *ngIf="currentRoute !== '/home' && currentRoute !== '/'"
     class="laptop-overlay"
@@ -93,25 +148,49 @@
 
   <!-- Footer Section -->
 
-  <footer class="footer" *ngIf="!isLoading" [@smoothDissolve]>
-    <div class="footer-content">
-      <img src="assets/images/logo.png" class="w-[80px]" alt="logo" />
-      <nav class="footer-nav">
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Portfolios</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
+  <footer
+    class="footer bg-black text-white py-8 px-4"
+    *ngIf="!isLoading"
+    [@smoothDissolve]
+  >
+    <div
+      class="footer-content max-w-7xl mx-auto flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-center"
+    >
+      <!-- Logo -->
+      <div class="flex justify-center md:justify-start">
+        <img src="assets/images/logo.png" class="w-[80px]" alt="logo" />
+      </div>
+
+      <!-- Navigation Links -->
+      <nav
+        class="footer-nav flex flex-col items-center gap-2 md:flex-row md:gap-6 text-sm"
+      >
+        <a href="#about" class="hover:text-gray-400">About</a>
+        <a href="#services" class="hover:text-gray-400">Service</a>
+        <a href="#portfolio" class="hover:text-gray-400">Portfolios</a>
+        <a href="#blog" class="hover:text-gray-400">Certificate</a>
+        <a href="#contact" class="hover:text-gray-400">Contact</a>
       </nav>
 
-      <p class="copyright">
+      <!-- Copyright -->
+      <p
+        class="copyright text-xs md:text-sm text-center md:text-right text-gray-400"
+      >
         © 2024 All rights reserved by
-        <span class="highlight">ShiyamRam</span>
+        <span class="highlight text-purple-400 font-semibold">ShiyamRam</span>
       </p>
     </div>
 
-    <div class="scroll-to-top">
-      <button class="scroll-button" (click)="scrollTop()">↑</button>
+    <!-- Scroll to top button -->
+    <div
+      class="scroll-to-top fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50"
+    >
+      <button
+        class="scroll-button border-2 border-purple-400 text-purple-400 rounded-full w-10 h-10 text-lg flex items-center justify-center transition-all hover:bg-purple-400 hover:text-white"
+        (click)="scrollTop()"
+      >
+        ↑
+      </button>
     </div>
   </footer>
 </div>

@@ -82,23 +82,26 @@ export class HomeComponent {
     { name: 'Github', icon: 'github.svg' },
   ];
 
-  @HostListener('window:scroll')
-  autoScroll() {
+  @HostListener('window:scroll', [])
+  autoScroll(): void {
+    if (!this.skillContainer) return;
+
     const el = this.skillContainer.nativeElement;
-    el.scrollLeft =
-      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
-      (el.scrollWidth - el.clientWidth);
+    const scrollPercentage =
+      window.scrollY / (document.body.scrollHeight - window.innerHeight);
+
+    el.scrollLeft = scrollPercentage * (el.scrollWidth - el.clientWidth);
   }
+
   ngOnInit() {
     this.createCircleSegments();
   }
 
   createCircleSegments() {
-    const radius = 160; // Increased radius for larger container
-    const center = 200; // Center of 400px container
+    const radius = 160;
+    const center = 200;
     const numTechs = this.techStack.length;
-    const gapAngle = 30; // Increased gap angle for more space
-
+    const gapAngle = 30;
     for (let i = 0; i < numTechs; i++) {
       const startAngle =
         (i * (360 / numTechs) + gapAngle / 2) * (Math.PI / 180);

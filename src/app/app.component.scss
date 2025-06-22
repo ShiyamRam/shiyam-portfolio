@@ -10,9 +10,11 @@
     background: transparent !important;
     backdrop-filter: blur(5px);
   }
+
   .projected_content {
     padding-top: 100px;
   }
+
   .hire-me-btn {
     background-image: linear-gradient(to right, #a970ff, #6b38f1);
     box-shadow: none;
@@ -20,35 +22,53 @@
   nav {
     z-index: 9999;
   }
+
+  mat-icon {
+    color: white;
+  }
 }
 
 .laptop-overlay {
   position: relative;
+  width: 100%;
+  height: auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
+
   img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
     filter: brightness(0.5);
   }
-}
 
-::ng-deep .mat-tooltip {
-  z-index: 1000 !important;
-  background-color: red;
-}
+  .breadcrumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-align: center;
+    white-space: nowrap;
 
-.breadcrumb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 10;
+    @media (max-width: 768px) {
+      top: 90%;
+      font-size: 1rem;
+    }
+  }
 }
 
 .footer {
@@ -65,9 +85,6 @@
     gap: 20px;
 
     .footer-nav {
-      display: flex;
-      gap: 25px;
-
       a {
         color: #fff;
         font-weight: 600;
@@ -83,18 +100,26 @@
     .copyright {
       font-size: 14px;
       color: #aaa;
+      text-align: center;
 
       .highlight {
-        color: #fff;
+        color: #a076f9;
         font-weight: 500;
       }
     }
   }
 
   .scroll-to-top {
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 50;
+
+    @media (min-width: 768px) {
+      right: 24px;
+      bottom: 24px;
+    }
+
     .scroll-button {
       background: transparent;
       border: 2px solid #a076f9;
@@ -104,7 +129,10 @@
       color: #a076f9;
       font-size: 18px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
 
       &:hover {
         background: #a076f9;

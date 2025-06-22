@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,ts,scss}"],
+  content: ["./src/**/*.{html,ts}"],
   safelist: ["animate-fade-in-up", "group-hover:animate-gloss-swipe"],
   theme: {
     extend: {

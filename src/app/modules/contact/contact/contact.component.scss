@@ -14,7 +14,13 @@
   .send_btn {
     background-image: linear-gradient(to right, #a970ff, #6b38f1);
     box-shadow: none;
-    width: 35%;
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .send_btn {
+      height: 100%;
+    }
   }
 }
 
