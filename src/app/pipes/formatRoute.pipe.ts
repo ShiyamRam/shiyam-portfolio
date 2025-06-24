@@ -7,7 +7,7 @@ export class FormatBreadcrumbPipe implements PipeTransform {
       '/about': 'About',
       '/services': 'Services',
       '/portfolio': 'Portfolio',
-      '/blog': 'Blog',
+      '/certificate': 'Certificate',
       '/contact': 'Contact',
     };
     return routeMap[route] || '';

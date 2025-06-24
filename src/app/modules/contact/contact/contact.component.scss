@@ -1,5 +1,4 @@
 .contact_card_container {
-  margin: 0 auto;
   color: white;
   .contact_card {
     background: #140c1c;
@@ -14,12 +13,6 @@
     background-image: linear-gradient(to right, #a970ff, #6b38f1);
     box-shadow: none;
     width: 50%;
-  }
-
-  @media (max-width: 768px) {
-    .send_btn {
-      height: 100%;
-    }
   }
 }
 

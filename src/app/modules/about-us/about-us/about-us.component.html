@@ -3,6 +3,12 @@
   <div class="w-full flex justify-center">
     <h2 class="text_gradient_new text-center">My Resume</h2>
   </div>
+  <div fxLayoutAlign="center center">
+    <span class="text_white_md_center mt-3 max-w-[90%] lg:max-w-[30%]"
+      >Not just a resume it's a roadmap of creativity, code, and continuous
+      growth.
+    </span>
+  </div>
 
   <!-- TimelineComponent HTML -->
   <div
@@ -56,34 +62,44 @@
   </div>
 
   <!-- Skill Sets Section -->
-  <div class="skills-section gradient_bg mt-10">
+  <div class="skills-section gradient_bg">
     <div class="w-full flex justify-center">
       <h2 class="text_gradient_new text-center">My Skills</h2>
     </div>
-    <div
-      class="skills-container"
-      fxLayout="row wrap"
-      fxLayoutAlign="center center"
-      fxLayoutGap="10px"
-    >
+    <div fxLayoutAlign="center center">
+      <span class="text_white_md_center mt-3 max-w-[90%] lg:max-w-[30%]"
+        >More than just tools—these are the capabilities that consistently drive
+        innovation, efficiency, and user engagement in every project I build.
+      </span>
+    </div>
+    <div class="w-full lg:w-[73%] mx-auto mt-10">
       <div
-        class="skill-item flex flex-col items-center justify-center text-center"
-        *ngFor="let skill of skills"
-        (mouseenter)="hoveredSkill = skill.name"
-        (mouseleave)="hoveredSkill = null"
+        class="skills-container flex flex-wrap justify-center"
+        fxLayout="row wrap"
+        fxLayoutAlign="center center"
       >
-        <div class="skill-progress">
-          <div class="progress-circle" [style.--percentage]="skill.percentage">
-            <img
-              [src]="'assets/images/' + skill.icon + '.svg'"
-              [alt]="skill.name"
-              [class.active]="hoveredSkill === skill.name"
-            />
+        <div
+          class="skill-item flex flex-col items-center justify-center text-center"
+          *ngFor="let skill of skills"
+          (mouseenter)="hoveredSkill = skill.name"
+          (mouseleave)="hoveredSkill = null"
+        >
+          <div class="skill-progress">
+            <div
+              class="progress-circle"
+              [style.--percentage]="skill.percentage"
+            >
+              <img
+                [src]="'assets/images/' + skill.icon + '.svg'"
+                [alt]="skill.name"
+                [class.active]="hoveredSkill === skill.name"
+              />
+            </div>
           </div>
+          <h3 class="text_white_bold_md text-center">
+            {{ skill.name }}
+          </h3>
         </div>
-        <h3 class="text_white_bold_md text-center">
-          {{ skill.name }}
-        </h3>
       </div>
     </div>
   </div>
