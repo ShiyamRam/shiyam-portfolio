@@ -16,6 +16,7 @@ import { ContactComponent } from './modules/contact/contact/contact.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { BlogComponent } from './modules/blog/blog/blog.component';
 import { ViewPopupComponent } from './shared/viewPopup/view-popup/view-popup.component';
+import { SkeletonLoaderComponent } from './shared/skeleton-loader/skeleton-loader.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ViewPopupComponent } from './shared/viewPopup/view-popup/view-popup.com
     BlogComponent,
     LoaderComponent,
     ViewPopupComponent,
+    SkeletonLoaderComponent,
   ],
   imports: [
     BrowserAnimationsModule,

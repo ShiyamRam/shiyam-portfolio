@@ -1,0 +1,21 @@
+<div class="relative" [style.width]="width" [style.height]="height">
+  <!-- Skeleton -->
+  <div
+    *ngIf="!isLoaded"
+    class="absolute inset-0 bg-gray-700 shimmer rounded"
+    [style.borderRadius]="radius"
+  ></div>
+
+  <!-- Lazy-loaded Image -->
+  <img
+    [src]="src"
+    [alt]="alt"
+    loading="lazy"
+    (load)="onImageLoad()"
+    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+    [ngStyle]="{
+      opacity: isLoaded ? '1' : '0',
+      borderRadius: radius
+    }"
+  />
+</div>
