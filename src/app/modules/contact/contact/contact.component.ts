@@ -46,17 +46,11 @@ export class ContactComponent {
         if (response) {
           this.dialog.open(SuccessPopupComponent, {
             data: 'Email Sent Sucessfully',
+            width: '450px',
+            panelClass: 'custom-dialog-container',
           });
         }
         this.contactForm.reset();
       });
-  }
-
-  successPopup() {
-    this.dialog.open(SuccessPopupComponent, {
-      data: 'Email Sent Sucessfully',
-      width: '450px',
-      panelClass: 'custom-dialog-container',
-    });
   }
 }
