@@ -17,6 +17,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
 import { BlogComponent } from './modules/blog/blog/blog.component';
 import { ViewPopupComponent } from './shared/viewPopup/view-popup/view-popup.component';
 import { SkeletonLoaderComponent } from './shared/skeleton-loader/skeleton-loader.component';
+import { SuccessPopupComponent } from './shared/success-popup/success-popup.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SkeletonLoaderComponent } from './shared/skeleton-loader/skeleton-loade
     LoaderComponent,
     ViewPopupComponent,
     SkeletonLoaderComponent,
+    SuccessPopupComponent,
   ],
   imports: [
     BrowserAnimationsModule,

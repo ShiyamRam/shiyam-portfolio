@@ -1,0 +1,16 @@
+<div class="popup-container">
+  <div fxLayoutAlign="end center">
+    <button
+      mat-icon-button
+      class="close-btn text-white"
+      (click)="dialogRef.close()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="flex flex-col items-center justify-center px-8 py-6 text-center">
+    <img src="assets/images/tick.svg" alt="tick" class="w-16 h-16 mb-4" />
+    <h2 class="successText">Success</h2>
+    <p class="mt-2 text-lg">{{ data }}</p>
+  </div>
+</div>

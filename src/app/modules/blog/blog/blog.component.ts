@@ -1,3 +1,4 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewPopupComponent } from 'src/app/shared/viewPopup/view-popup/view-popup.component';
@@ -8,7 +9,7 @@ import { ViewPopupComponent } from 'src/app/shared/viewPopup/view-popup/view-pop
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent {
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private overlay: Overlay) {}
 
   certificateArr = [
     {
@@ -59,6 +60,8 @@ export class BlogComponent {
       width: '650px',
       panelClass: 'certificate-dialog-overlay',
       data: { certificate: course },
+      scrollStrategy: this.overlay.scrollStrategies.block(), // ADD THIS
+      autoFocus: false,
     });
   }
 }

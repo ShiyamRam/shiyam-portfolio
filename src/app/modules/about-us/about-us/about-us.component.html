@@ -14,12 +14,12 @@
   <div
     class="modern-timeline"
     fxLayout="column"
-    fxLayout.lt-md="column"
     fxLayout.gt-sm="row"
+    fxLayoutAlign.gt-sm="start start"
     fxLayoutGap="32px"
   >
     <!-- Education Section -->
-    <div class="timeline-section with-highlight" fxFlex="100" fxFlex.gt-sm="50">
+    <div class="timeline-section with-highlight" fxFlex.gt-sm="50">
       <h2 class="section-heading">
         <span class="icon">🎓</span>
         <span class="text_gradient_md">Education</span>
@@ -31,7 +31,7 @@
           <div class="entry-line"></div>
         </div>
         <div class="entry-content glass-card">
-          <h3>{{ edu.title }}</h3>
+          <h3 class="text_white_bold_lg">{{ edu.title }}</h3>
           <p class="timeline-sub">{{ edu.institution }}</p>
           <p class="timeline-meta">{{ edu.gpa }}</p>
           <p>{{ edu.description }}</p>
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Experience Section -->
-    <div class="timeline-section with-highlight" fxFlex="100" fxFlex.gt-sm="50">
+    <div class="timeline-section with-highlight" fxFlex.gt-sm="50">
       <h2 class="section-heading">
         <span class="icon">💼</span>
         <span class="text_gradient_md">Experience</span>
@@ -52,7 +52,7 @@
           <div class="entry-line"></div>
         </div>
         <div class="entry-content glass-card">
-          <h3>{{ exp.company }}</h3>
+          <h3 class="text_white_bold_lg">{{ exp.company }}</h3>
           <p class="timeline-sub">{{ exp.role }}</p>
           <p class="timeline-meta">{{ exp.duration }}</p>
           <p>{{ exp.description }}</p>
@@ -72,7 +72,7 @@
         innovation, efficiency, and user engagement in every project I build.
       </span>
     </div>
-    <div class="w-full lg:w-[73%] mx-auto mt-10">
+    <div class="w-full lg:w-[73%] mx-auto mt-10 pb-8">
       <div
         class="skills-container flex flex-wrap justify-center"
         fxLayout="row wrap"
@@ -106,15 +106,45 @@
 
   <!-- Let's have chat -->
   <div class="p-5 sm:p-10 md:p-20 black_bg" fxLayout="column">
-    <span class="text_white_md p-5">Want to start a project?</span>
-    <h2 class="animated-heading text-center flex flex-wrap justify-center">
-      <span
-        *ngFor="let letter of getChatText(); let i = index"
-        class="letter"
-        [style.--delay]="i * 0.1"
-        [innerHTML]="letter === ' ' ? '&nbsp;' : letter"
+    <div fxLayoutAlign="start center">
+      <a
+        href="https://wa.me/919080220329?text=Hi%20Shiyam%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+        target="_blank"
+        rel="noopener noreferrer"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-      </span>
+        <img
+          src="assets/images/whatsapp.svg"
+          alt="whatsapp"
+          class="whats-app"
+        />
+      </a>
+      <span class="text_white_md p-5">Want to start a project?</span>
+    </div>
+
+    <h2 class="animated-heading text-center flex flex-wrap justify-center">
+      <ng-container *ngFor="let letter of getChatText(); let i = index">
+        <span
+          *ngIf="i !== getChatText().length - 1"
+          class="letter"
+          [style.--delay]="i * 0.1"
+          [innerHTML]="letter === ' ' ? '&nbsp;' : letter"
+        ></span>
+
+        <div
+          *ngIf="i === getChatText().length - 1"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          class="last-letter-icon"
+        >
+          <span
+            class="letter"
+            [style.--delay]="i * 0.1"
+            [innerHTML]="letter"
+          ></span>
+        </div>
+      </ng-container>
     </h2>
   </div>
 </div>
