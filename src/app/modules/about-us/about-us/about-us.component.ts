@@ -21,16 +21,25 @@ export class AboutUsComponent {
     {
       title: 'B.E Computer Science',
       institution: "St-Joseph's College Of Engineering (OMR, Chennai)",
-      gpa: '8.74/10 GPA',
+      gpa: '8.74 CGPA',
       description:
         'Gained strong foundations in software engineering and web development.',
+    },
+    {
+      title: 'HSLC (Biology)',
+      institution:
+        'New Prince Matriculation Higher Secondary School (Adambakkam, Chennai)',
+      gpa: '70%',
+      description:
+        'Gained foundational knowledge in biology, physics, and chemistry. Took part in inter-school science exhibitions and seminars. Developed early interest in technology through school-level IT workshops.',
     },
     {
       title: 'SSLC (10TH)',
       institution:
         'New Prince Matriculation Higher Secondary School (Adambakkam, Chennai)',
       gpa: '90.5%',
-      description: '',
+      description:
+        'Excelled in mathematics and science. Consistently maintained top grades and took active roles in school-level academic clubs and quizzes.  ',
     },
   ];
 
@@ -40,13 +49,14 @@ export class AboutUsComponent {
       role: 'Software Developer',
       duration: 'Present',
       description:
-        'Developing full-stack Angular applications with a focus on performance and UX.',
+        'Solving complex frontend challenges using Angular by designing scalable, maintainable, and performant UI architectures. Focused on delivering seamless user experiences while integrating APIs and handling data-driven workflows. Collaborating cross-functionally to diagnose and resolve performance bottlenecks, usability issues, and production-level bugs with a problem-solving mindset.',
     },
     {
       company: 'Rumango Software',
       role: 'Associate Software Developer',
       duration: 'June 2023 – May 2025',
-      description: '',
+      description:
+        'Contributed to various modules of enterprise applications using Angular and Node.js. Participated in requirement analysis, bug fixing, and feature enhancements. Gained hands-on experience in version control (Git), agile methodologies, and deployment processes.',
     },
   ];
 

@@ -172,3 +172,12 @@ $font-family-theme: "Sora", sans-serif !default;
   font-style: italic;
   margin-bottom: 1rem;
 }
+
+.successText {
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  font-family: $font-family-theme;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #408140;
+}

@@ -24,42 +24,63 @@
           responsive, and maintainable web apps with precision and love what I
           do. Let’s team up and build something awesome.</span
         >
-        <div fxLayout="row wrap" fxLayoutGap="10px" fxFlex="100" class="mt-6">
-          <div fxFlex="46.5" fxFlex.lt-sm="100">
-            <mat-form-field appearance="outline">
-              <mat-label>First Name</mat-label>
-              <input matInput />
-            </mat-form-field>
-          </div>
+        <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+          <div fxLayout="row wrap" fxLayoutGap="10px" fxFlex="100" class="mt-6">
+            <div fxFlex="46.5" fxFlex.lt-sm="100">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" />
+              </mat-form-field>
+            </div>
 
-          <div fxFlex="46.5" fxFlex.lt-sm="100">
-            <mat-form-field appearance="outline">
-              <mat-label>Last Name</mat-label>
-              <input matInput />
-            </mat-form-field>
+            <div fxFlex="46.5" fxFlex.lt-sm="100">
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" />
+              </mat-form-field>
+            </div>
+            <div fxFlex="46.5" fxFlex.lt-sm="100">
+              <mat-form-field appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input matInput formControlName="email" />
+              </mat-form-field>
+            </div>
+            <div fxFlex="46.5" fxFlex.lt-sm="100">
+              <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="mobile" />
+              </mat-form-field>
+            </div>
+            <div fxFlex="100">
+              <mat-form-field appearance="outline" style="width: 100%">
+                <span>Message</span>
+                <textarea
+                  matInput
+                  rows="6"
+                  name="message"
+                  formControlName="message"
+                ></textarea>
+              </mat-form-field>
+            </div>
           </div>
-          <div fxFlex="46.5" fxFlex.lt-sm="100">
-            <mat-form-field appearance="outline">
-              <mat-label>Email Address</mat-label>
-              <input matInput />
-            </mat-form-field>
-          </div>
-          <div fxFlex="46.5" fxFlex.lt-sm="100">
-            <mat-form-field appearance="outline">
-              <mat-label>Phone</mat-label>
-              <input matInput />
-            </mat-form-field>
-          </div>
-          <div fxFlex="100">
-            <mat-form-field appearance="outline" style="width: 100%">
-              <span>Message</span>
-              <textarea matInput rows="6" name="message"></textarea>
-            </mat-form-field>
-          </div>
-        </div>
+        </form>
+
         <div fxLayout="row" fxLayoutAlign="center center" class="w-full mt-36">
-          <button mat-raised-button color="primary" class="send_btn">
+          <button
+            mat-raised-button
+            color="primary"
+            class="send_btn"
+            (click)="sendEmail()"
+          >
             Send Message!
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            class="send_btn"
+            (click)="successPopup()"
+          >
+            Sucess popup!
           </button>
         </div>
       </div>
