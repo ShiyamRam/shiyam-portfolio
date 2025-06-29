@@ -32,7 +32,7 @@ export class ViewPopupComponent implements OnInit {
     const link = document.createElement('a');
     link.href = url;
     link.download = `${name}${url.endsWith('.pdf') ? '.pdf' : '.jpg'}`;
-    link.target = '_blank'; // Optional: open in new tab for PDF
+    link.target = '_blank';
     link.click();
   }
 }

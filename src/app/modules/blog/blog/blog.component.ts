@@ -25,7 +25,7 @@ export class BlogComponent {
     {
       name: 'Javascript ',
       platform: 'Coursera',
-      certificateImageUrl: 'assets/images/certificates/courseraJavascript.pdf',
+      certificateImageUrl: 'assets/images/certificates/courseraJavascript.jpg',
     },
     {
       name: 'Bootstarp & Tailwind',
@@ -36,12 +36,12 @@ export class BlogComponent {
     {
       name: 'Full-stack Developer',
       platform: 'Coursera',
-      certificateImageUrl: 'assets/images/certificates/courseraFrontEndDev.pdf',
+      certificateImageUrl: 'assets/images/certificates/courseraFrontEndDev.jpg',
     },
     {
       name: 'Database Structure and Management with MYSQL',
       platform: 'Coursera',
-      certificateImageUrl: 'assets/images/certificates/courserasql.pdf',
+      certificateImageUrl: 'assets/images/certificates/courserasql.jpg',
     },
     {
       name: 'Angular Complete Angular Guide ',
@@ -60,7 +60,7 @@ export class BlogComponent {
       width: '650px',
       panelClass: 'certificate-dialog-overlay',
       data: { certificate: course },
-      scrollStrategy: this.overlay.scrollStrategies.block(), // ADD THIS
+      scrollStrategy: this.overlay.scrollStrategies.block(),
       autoFocus: false,
     });
   }
